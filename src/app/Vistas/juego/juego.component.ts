@@ -8,22 +8,22 @@ import { Usuario } from 'src/app/Entidades/usuario';
 })
 export class JuegoComponent implements OnInit {
   usuario:Usuario = new Usuario();
-  constructor() {     
+  constructor() {
   }
   
   ngOnInit(): void {
 
-  this.usuario.nombre = "Macarena";
-  console.log(this.usuario.nombre);  
+  this.usuario.usuario = "Macarena";
+  console.log(this.usuario.usuario);
   }
 
   cambiarNombre():void{
-    this.usuario.nombre="Jorge";
-    this.usuario.apellido="Peposo";
+    this.usuario.usuario="Jorge";
+    this.usuario.contrasenia="Peposo";
   }
   Aceptar():void{
-    console.log(this.usuario.nombre);
-    console.log(this.usuario.apellido);
+    console.log(this.usuario.usuario);
+    console.log(this.usuario.contrasenia);
     
   }
 }

@@ -1,6 +1,6 @@
-<p>{{this.usuario.nombre}}</p>
-<p>Apellido: {{this.usuario.apellido}}</p>
-<input type="text" [(ngModel)]="this.usuario.nombre">
-<input type="text" [(ngModel)]="this.usuario.apellido">
+<p>{{this.usuario.usuario}}</p>
+<p>{{this.usuario.contrasenia}}</p>
+<input type="text" [(ngModel)]="this.usuario.usuario">
+<input type="text" [(ngModel)]="this.usuario.contrasenia">
 <input type="button"(click)="cambiarNombre()" value="Cambiar nombre">
-<input type="button"(click)="this.usuario.mostrar()" value="Mostrar">
+<input type="button"(click)="this.usuario.validar" value="Mostrar">

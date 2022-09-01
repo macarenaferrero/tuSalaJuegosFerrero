@@ -1,0 +1,14 @@
+footer {
+    background-color: rgb(237, 155, 238);
+    bottom: 0;
+    width: 100%;
+    position: fixed;
+    justify-content: space-around;
+    display: flex;
+    color: #ffffff;
+    letter-spacing: 0.3vw;
+    font-family: 'system-ui';
+    text-transform: uppercase;
+    text-align: center;
+    padding: 15px;
+}
