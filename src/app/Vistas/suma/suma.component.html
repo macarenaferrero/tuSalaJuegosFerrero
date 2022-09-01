@@ -1,0 +1,26 @@
+<router-outlet></router-outlet>
+<!-- Muestro un atributo de mi objeto -->
+<!-- Con los corchetes lo toma como valor, resuleven la variable  -->
+<!-- Los parentesis setean el manejador de eventos -->
+
+<header>
+    <h1>{{title}}</h1>
+    </header>
+    <!-- Con los corchetes lo toma como valor, resuelven la variable  -->
+    <!-- Los parentesis setean el manejador de eventos -->
+    <main>
+        <form id="login_form" class="form_class" action="login/login-access.php" method="post">
+            <div class="form_div">
+                <label>Edad Uno:</label>
+                <input class="field_class" name="login_txt" type="number" [(ngModel)]="miSuma.edadUno" placeholder="Ingrese edad a calcular" autofocus>
+                <label>Edad Dos:</label>
+                <input id="pass" class="field_class" name="password_txt" type="number" [(ngModel)]="miSuma.edadDos" placeholder="Ingrese edad a calcular">
+                <button class="submit_class" type="submit" form="login_form" (click)="miSuma.calcular()">Calcular</button>
+                <label>Suma Total:</label>
+                <input class="field_class" name="login_txt" type="number" [(ngModel)]="miSuma.resultado" readonly>
+                <label>Promedio:</label>
+                <input id="pass" class="field_class" name="password_txt" type="number" [(ngModel)]="miSuma.promedioSuma" readonly>
+                <button class="submit_class" type="submit" form="login_form" (click)="miSuma.limpiarCampos()">Limpiar Campos</button>
+            </div>
+        </form>
+    </main>
