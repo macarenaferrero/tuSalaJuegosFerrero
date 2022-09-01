@@ -1,23 +1,23 @@
 export class Suma {
-    edadUno: number = 0;
-    edadDos: number = 0;
-    resultado: number = 0;
-    promedioSuma: number = 0;
+    edadUno: number|undefined;
+    edadDos: number|undefined;
+    resultado: number|undefined;
+    promedioSuma: number|undefined;
     
     calcular(){
-        if(this.edadUno == 0 || this.edadDos == 0){
-            alert("Ingrese ambas edades a calcular.");
-        }
-        else{
+        
+        if(this.edadUno && this.edadDos){
             this.resultado = this.edadUno + this.edadDos;
             this.promedioSuma = (this.edadUno + this.edadDos)/2;
+        }else{
+            alert("Ingrese ambas edades a calcular.");
         }
     }
     
     limpiarCampos(){
-        this.resultado = 0;
-        this.promedioSuma = 0;
-        this.edadUno = 0;
-        this.edadDos = 0;
+        this.resultado = undefined;
+        this.promedioSuma = undefined;
+        this.edadUno = undefined;
+        this.edadDos = undefined;
     }
     }
