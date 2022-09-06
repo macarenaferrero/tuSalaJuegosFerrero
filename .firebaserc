@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "tusalajuegosferrero": {
+      "hosting": {
+        "tuSalaJuegosFerrero": [
+          "tusalajuegosferrero"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "tusalajuegosferrero"
+  }
+}

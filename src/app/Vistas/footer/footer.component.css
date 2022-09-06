@@ -1,14 +1,68 @@
-footer {
-    background-color: rgb(237, 155, 238);
-    bottom: 0;
-    width: 100%;
-    position: fixed;
-    justify-content: space-around;
-    display: flex;
-    color: #ffffff;
-    letter-spacing: 0.3vw;
-    font-family: 'system-ui';
-    text-transform: uppercase;
-    text-align: center;
-    padding: 15px;
-}
+.purple {
+    background: purple;
+  }
+  
+  .rebecca {
+    background: rebeccapurple;
+  }
+  
+  .icon {
+    font-size: 40px;
+    padding-left: 2px;
+  }
+  
+  .footer {
+    background: whitesmoke;
+  }
+  
+  .icono:hover {
+    transform: scale(1.5);
+    transition-duration: 400ms;
+  }
+  
+  .frase {
+    background: rgb(233, 183, 186, 0.8);
+    height: auto;
+  }
+  
+  .frase-texto {
+    color: white;
+    font-size: 25px;
+    justify-content: center;
+  }
+  
+  textarea {
+    resize: none;
+  }
+  
+  /* NO VISITADO*/
+  a:link {
+    text-decoration: none;
+    color: black;
+  }
+  
+  /* VISITADO*/
+  a:visited {
+    text-decoration: none;
+    color: black;
+  }
+  
+  /* ACTIVO*/
+  a:active {
+    text-decoration: none;
+    color: black;
+  }
+  
+  /* POSICIÓN MAUSE*/
+  a:hover {
+    color: rgb(233, 183, 186, 0.8);
+    text-decoration: none;
+    transform: scale(1.5);
+    transition-duration: 400ms;
+  }
+  
+  .foto {
+    background: cornflowerblue;
+    justify-content: flex-start;
+  }
+  

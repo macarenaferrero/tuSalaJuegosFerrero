@@ -1,0 +1,88 @@
+.purple {
+    background: purple;
+  }
+  
+  .rebecca {
+    background: rebeccapurple;
+  }
+  
+  .icon {
+    font-size: 72px;
+  }
+  header {
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 15vh;
+    box-shadow: 0px 5px 10px rgb(0,0,0,0.3);
+}
+h1 {
+    letter-spacing: 1.5vw;
+    font-family: 'system-ui';
+    text-transform: uppercase;
+    text-align: center;
+}
+main {
+    background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Mountains-1412683.svg/1280px-Mountains-1412683.svg.png) no-repeat center center;
+    background-size: cover;
+}
+  .icono:hover {
+    transform: scale(1.5);
+    transition-duration: 400ms;
+  }
+  
+  .frase {
+    background: rgb(233, 183, 186, 0.8);
+    height: auto;
+  }
+  
+  .frase-texto {
+    color: white;
+    font-size: 25px;
+    justify-content: center;
+  }
+  
+  textarea {
+    resize: none;
+  }
+  
+  /* NO VISITADO*/
+  a:link {
+    text-decoration: none;
+    color: black;
+  }
+  
+  /* VISITADO*/
+  a:visited {
+    text-decoration: none;
+    color: black;
+  }
+  
+  /* ACTIVO*/
+  a:active {
+    text-decoration: none;
+    color: black;
+  }
+  
+  /* POSICIÓN MAUSE*/
+  a:hover {
+    color: rgb(233, 183, 186, 0.8);
+    text-decoration: none;
+    transform: scale(1.5);
+    transition-duration: 400ms;
+  }
+  
+.foto {
+  background: cornflowerblue;
+  justify-content: flex-start;
+}
+
+.info_div {
+  text-align: center;
+  margin-top: 20px;
+}
+.info_div {
+    letter-spacing: 1px;
+}

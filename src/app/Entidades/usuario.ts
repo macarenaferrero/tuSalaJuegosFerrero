@@ -7,7 +7,7 @@ export class Usuario {
             alert("Falta completar campos para iniciar sesión.");
         }
         else{
-            alert("Bienvenidx " + this.usuario + ", ha iniciado sesión correctamente.");
+            localStorage.setItem("usuario", JSON.stringify(this));
         }
     }
 }

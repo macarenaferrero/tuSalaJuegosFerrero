@@ -7,15 +7,16 @@ import { AppComponent } from './app.component';
 import { JuegoComponent } from './Vistas/juego/juego.component';
 import { SumaComponent } from './Vistas/suma/suma.component';
 import { LoginComponent } from './Vistas/login/login.component';
-import { RouterModule, Routes } from '@angular/router';
 import { IndexComponent } from './Vistas/index/index.component';
 import { FooterComponent } from './Vistas/footer/footer.component';
+import { ErrorComponent } from './Vistas/error/error.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { QuienSoyComponent } from './Vistas/quien-soy/quien-soy.component';
 
-const rutas: Routes = [
-  {path:"",component:IndexComponent},
-  {path:"suma",component:SumaComponent},
-  {path:"login",component:LoginComponent}
-];
+
 
 @NgModule({
   declarations: [
@@ -24,13 +25,17 @@ const rutas: Routes = [
     SumaComponent,
     LoginComponent,
     IndexComponent,
-    FooterComponent
+    FooterComponent,
+    ErrorComponent,
+    QuienSoyComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    RouterModule.forRoot(rutas)
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore())
   ],
   providers: [],
   bootstrap: [AppComponent]
