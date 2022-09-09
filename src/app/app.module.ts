@@ -24,6 +24,7 @@ import { QuienSoyComponent } from './Vistas/quien-soy/quien-soy.component';
 import { NavbarComponent } from './Vistas/navbar/navbar.component';
 import { RegistroComponent } from './Vistas/registro/registro.component';
 import {  AngularFireModule} from "@angular/fire/compat";
+import { SpinnerComponent } from './Vistas/spinner/spinner.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import {  AngularFireModule} from "@angular/fire/compat";
     ErrorComponent,
     QuienSoyComponent,
     NavbarComponent,
-    RegistroComponent
+    RegistroComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
