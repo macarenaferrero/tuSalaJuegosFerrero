@@ -17,5 +17,6 @@ title = "Login";
   ngOnInit(): void {
     
   }
-
+  completar(){
+  }
 }
