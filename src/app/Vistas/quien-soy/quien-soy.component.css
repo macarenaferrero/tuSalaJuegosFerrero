@@ -68,7 +68,7 @@ main {
   
   /* POSICIÓN MAUSE*/
   a:hover {
-    color: rgb(233, 183, 186, 0.8);
+    color: rgba(99, 21, 163, 0.8);
     text-decoration: none;
     transform: scale(1.5);
     transition-duration: 400ms;

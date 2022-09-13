@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Usuario } from 'src/app/Entidades/usuario'; 
+import { CodeErrorService } from 'src/app/services/code-error.service';
 
 @Component({
   selector: 'app-login',
@@ -12,12 +13,13 @@ import { Usuario } from 'src/app/Entidades/usuario';
 })
 export class LoginComponent implements OnInit {
 title = "Login";
+Usuario:Usuario=new Usuario;
   loading: boolean=false;
   loginUsuario:FormGroup;
   constructor(private fb:FormBuilder, private toastr: ToastrService, private router: Router,
-    private afAuth:AngularFireAuth) { 
+    private afAuth:AngularFireAuth, private codeError:CodeErrorService) { 
       this.loginUsuario = this.fb.group({
-        email: ['',Validators.required],
+        email: ['',[Validators.required, Validators.email]],
         pass: ['',Validators.required]
       });
   }
@@ -26,6 +28,8 @@ title = "Login";
     
   }
   completar(){
+    this.Usuario.email = "macarenaferrero@gmail.com"
+    this.Usuario.pass = "123456";
   }
 
   login(){
@@ -34,10 +38,11 @@ title = "Login";
     this.loading = true;
     this.afAuth.signInWithEmailAndPassword(email, pass)
     .then((user) => {
+      this.toastr.success("Ingreso satisfactorio","Sesión iniciada")
       this.router.navigate(['/juegos']);
     }).catch((error) => {
       this.loading=false;
-      console.log(error);
+      this.toastr.error(this.codeError.firebaseError(error.code), "Error");
     })
   }
 }

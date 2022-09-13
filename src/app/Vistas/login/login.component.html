@@ -3,9 +3,6 @@
 <header>
 <h1>{{title}}</h1>
 </header>
-<nav>
-    <app-navbar></app-navbar>
-</nav>
 <!-- Con los corchetes lo toma como valor, resuelven la variable  -->
 <!-- Los parentesis setean el manejador de eventos -->
 <main>
@@ -13,9 +10,13 @@
         <form  (ngSubmit)="login()" [formGroup]="loginUsuario" id="login_form" class="form_class" action="login/login-access.php" method="post">
             <div class="form_div">
                 <label>Email:</label>
-                <input id="email" class="field_class" name="login_txt" type="text" formControlName="email"  placeholder="Ingrese su email" autofocus>
+                <input id="email" class="field_class" name="login_txt" type="text" formControlName="email" placeholder="Ingrese su email" autofocus [(ngModel)]='Usuario.email'>
+                <span *ngIf="loginUsuario.get('email')?.hasError('required') && loginUsuario.get('email')?.touched"  class="text-danger form-floating">El email es requerido</span>
+                <span *ngIf="loginUsuario.get('email')?.hasError('email') && loginUsuario.get('email')?.touched"  class="text-danger form-floating">El email es inválido</span>
+                <br>
                 <label>Password:</label>
-                <input id="pass" class="field_class" name="password_txt" type="password" formControlName="pass"  placeholder="Ingrese password">
+                <input id="pass" class="field_class" name="password_txt" type="password" formControlName="pass" placeholder="Ingrese password" [(ngModel)]='Usuario.pass'>
+                <span *ngIf="loginUsuario.get('pass')?.hasError('required') && loginUsuario.get('pass')?.touched"  class="text-danger form-floating">La contraseña es requerida</span>
                 <button class="submit_class" type="submit" form="login_form" >Entrar</button>
                 <button class="submit_class" type="submit" form="login_form" (click)="completar()">Acceso Rápido</button>
 

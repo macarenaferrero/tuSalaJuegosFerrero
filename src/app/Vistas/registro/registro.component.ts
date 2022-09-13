@@ -4,6 +4,8 @@ import { AngularFireAuth } from "@angular/fire/compat/auth";
 import { user } from '@angular/fire/auth';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import { CodeErrorService } from 'src/app/services/code-error.service';
+import { Usuario } from 'src/app/Entidades/usuario';
 
 @Component({
   selector: 'app-registro',
@@ -12,13 +14,14 @@ import { Router } from '@angular/router';
 })
 export class RegistroComponent implements OnInit {
   title = "Registro";
+  Usuario:Usuario=new Usuario;
   nuevoRegistro:FormGroup;
   loading: boolean = false;
   
   constructor(private fb:FormBuilder, private toastr: ToastrService, private router: Router,
-    private afAuth:AngularFireAuth) { 
+    private afAuth:AngularFireAuth, private codeError:CodeErrorService) { 
     this.nuevoRegistro = fb.group({
-    email:["",Validators.required],
+    email:["",[Validators.required, Validators.email]],
     pass:["",Validators.required],
     pass2:["",Validators.required],
     })
@@ -27,39 +30,24 @@ export class RegistroComponent implements OnInit {
   }
 
   registrar(){
-    const email = this.nuevoRegistro.value.email;
-    const pass = this.nuevoRegistro.value.pass;
-    const pass2 = this.nuevoRegistro.value.pass2;
     
-    if(pass != pass2){
+    if(this.Usuario.pass != this.Usuario.pass2){
       this.toastr.error("Las contraseñas ingresadas deben ser iguales", "Error");
       return;
     }
 
     this.loading = true;
     this.afAuth
-    .createUserWithEmailAndPassword(email, pass)
+    .createUserWithEmailAndPassword(this.Usuario.email, this.Usuario.pass)
     .then(() => {
       this.loading=false;
       this.toastr.success("Usuario creado con exito", 'Usuario exitoso');
       this.router.navigate(['/juegos']);
     }).catch((error) => {
       this.loading = false;
-        this.toastr.error(this.firebaseError(error.code), "Error");
+        this.toastr.error(this.codeError.firebaseError(error.code), "Error");
     });
   }
 
-  firebaseError(code: string){
-    switch (code) {
-      case 'auth/email-already-in-use':
-        return "El usuario ya existe.";
-      case 'auth/weak-password':
-        return "La contraseña debe tener mínimo 6 carácteres.";
-      case 'auth/invalid-email':
-        return "Email inválido.";
-      default:
-        return "Error desconocido";
-      
-    }
-  }
+  
 }

@@ -1,0 +1,8 @@
+.logIn{
+    display: flex;
+    flex-wrap: inherit;
+    text-align: end;
+    color: grey;
+    align-items: center;
+    justify-content: space-between;
+}

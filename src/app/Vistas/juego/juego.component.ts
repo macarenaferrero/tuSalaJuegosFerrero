@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { Router } from '@angular/router';
 import { Usuario } from 'src/app/Entidades/usuario';
 
 @Component({
@@ -7,14 +9,14 @@ import { Usuario } from 'src/app/Entidades/usuario';
   styleUrls: ['./juego.component.css']
 })
 export class JuegoComponent implements OnInit {
-  usuario:Usuario = new Usuario();
-  constructor() {
+  usuario:any;
+  constructor(private afAuth:AngularFireAuth, private router: Router) {
   }
   
   ngOnInit(): void {
 
-  this.usuario.usuario = "Macarena";
-  console.log(this.usuario.usuario);
+
+
   }
 
   cambiarNombre():void{
@@ -26,4 +28,6 @@ export class JuegoComponent implements OnInit {
     console.log(this.usuario.contrasenia);
     
   }
+
+  
 }
