@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Routes } from '@angular/router';
 import { JuegoComponent } from './juego/juego.component';
 import { SharedModule } from '../shared/shared.module';
+import { JuegosModule } from './juegos.module';
+import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
-  {path:'juegos',component:JuegoComponent},
-  {path: '', redirectTo:'/juegos',pathMatch:'full'},
-  //{path:'**',component:ErrorComponent}
+  {path: '**', component:JuegoComponent},
 ];
 
 @NgModule({
@@ -15,7 +14,10 @@ const routes: Routes = [
   ],
   imports: [
     CommonModule,
-    SharedModule
+    RouterModule.forChild(routes)
+  ],
+  exports:[
+    RouterModule
   ]
 })
 export class JuegosRoutingModule { }

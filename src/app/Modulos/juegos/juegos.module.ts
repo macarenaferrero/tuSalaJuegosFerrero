@@ -1,7 +1,9 @@
-import { NgModule } from '@angular/core';
+
 import { CommonModule } from '@angular/common';
 import { JuegoComponent } from './juego/juego.component';
 import { SharedModule } from '../shared/shared.module';
+import { NgModule } from '@angular/core';
+import { JuegosRoutingModule } from './juegos-routing.module';
 
 
 
@@ -11,7 +13,8 @@ import { SharedModule } from '../shared/shared.module';
   ],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    JuegosRoutingModule
   ],
   exports:[
     JuegoComponent
