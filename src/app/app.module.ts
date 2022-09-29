@@ -10,48 +10,43 @@ import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
-
+import { JuegosModule } from './Modulos/juegos/juegos.module';
+import { SharedModule } from './Modulos/shared/shared.module';
+import { JuegosRoutingModule } from './Modulos/juegos/juegos-routing.module';
 
 //Componentes
 import { AppComponent } from './app.component';
-import { JuegoComponent } from './Vistas/juego/juego.component';
-import { SumaComponent } from './Vistas/suma/suma.component';
 import { LoginComponent } from './Vistas/login/login.component';
 import { IndexComponent } from './Vistas/index/index.component';
-import { FooterComponent } from './Vistas/footer/footer.component';
 import { ErrorComponent } from './Vistas/error/error.component';
 import { QuienSoyComponent } from './Vistas/quien-soy/quien-soy.component';
-import { NavbarComponent } from './Vistas/navbar/navbar.component';
 import { RegistroComponent } from './Vistas/registro/registro.component';
 import {  AngularFireModule} from "@angular/fire/compat";
-import { SpinnerComponent } from './Vistas/spinner/spinner.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    JuegoComponent,
-    SumaComponent,
     LoginComponent,
     IndexComponent,
-    FooterComponent,
     ErrorComponent,
     QuienSoyComponent,
-    NavbarComponent,
     RegistroComponent,
-    SpinnerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    JuegosModule,
+    SharedModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     BrowserAnimationsModule, // required animations module
-    ToastrModule.forRoot(), // ToastrModule added
+    ToastrModule.forRoot(), JuegosRoutingModule, // ToastrModule added
   ],
   providers: [],
   bootstrap: [AppComponent]
