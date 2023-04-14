@@ -16,12 +16,13 @@ import { JuegosRoutingModule } from './Modulos/juegos/juegos-routing.module';
 
 //Componentes
 import { AppComponent } from './app.component';
-import { LoginComponent } from './Vistas/login/login.component';
+import { LoginComponent } from './auth/login/login.component';
 import { IndexComponent } from './Vistas/index/index.component';
 import { ErrorComponent } from './Vistas/error/error.component';
 import { QuienSoyComponent } from './Vistas/quien-soy/quien-soy.component';
-import { RegistroComponent } from './Vistas/registro/registro.component';
+import { RegistroComponent } from './auth/registro/registro.component';
 import {  AngularFireModule} from "@angular/fire/compat";
+import { NavbarComponent } from './Modulos/shared/navbar/navbar.component';
 
 
 

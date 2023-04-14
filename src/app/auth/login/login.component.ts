@@ -20,8 +20,9 @@ Usuario:Usuario=new Usuario;
     private afAuth:AngularFireAuth, private codeError:CodeErrorService) { 
       this.loginUsuario = this.fb.group({
         email: ['',[Validators.required, Validators.email]],
-        pass: ['',Validators.required]
+        pass: ['',Validators.required],        
       });
+      
   }
 
   ngOnInit(): void {

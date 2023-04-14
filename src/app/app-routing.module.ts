@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { IndexComponent } from './Vistas/index/index.component';
-import { LoginComponent } from "./Vistas/login/login.component";
+import { LoginComponent } from "./auth/login/login.component";
 import { ErrorComponent } from './Vistas/error/error.component';
 import { QuienSoyComponent } from './Vistas/quien-soy/quien-soy.component';
-import { RegistroComponent } from './Vistas/registro/registro.component';
+import { RegistroComponent } from './auth/registro/registro.component';
 import { JuegosModule } from './Modulos/juegos/juegos.module';
 
 const rutas: Routes = [

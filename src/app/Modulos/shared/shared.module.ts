@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
+import { AppModule } from 'src/app/app.module';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -14,6 +16,7 @@ import { FooterComponent } from './footer/footer.component';
   ],
   imports: [
     CommonModule,
+    RouterModule
   ],
   exports:[
     SpinnerComponent,
