@@ -1,0 +1,42 @@
+<router-outlet></router-outlet>
+<header>
+  <h1>Contactanos</h1>
+</header>
+<nav>
+  <app-navbar></app-navbar>
+</nav>
+<main>
+
+      <form class="m-2 card" [formGroup]="formChat">
+        <div class="card-header d-flex justify-content-between align-items-center p-3"
+          style="border-top: 4px solid #9c096b;">
+          <h5 class="mb-0">Chat online</h5>
+        </div>
+        <div class="m-2 card-body scrollable-chat" style="height: 200px;">
+          <div *ngFor="let chat of chats">
+            <div class="d-flex justify-content-between">
+              <p class="small mb-1">{{chat.user}}</p>
+              <p class="time-left" style="font-size: x-small;">{{chat.hora}}</p>
+            </div>
+            <div class="d-flex flex-row justify-content-start">
+              <div>
+                <p class="small p-2 ms-3 mb-3 rounded-3" style="background-color: #f5f6f7;">
+                  {{chat.mensaje}}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer text-muted d-flex justify-content-start align-items-center p-3">
+          <div class="input-group mb-0">
+            <input formControlName="mensaje" id="mensaje" type="text" style="margin-top: 10px;" value=" " class="form-control" placeholder=" Escribe tu mensaje...">
+            <button (click)="crearMensaje()" [disabled]="formChat.invalid" class="submit_class" type="button"
+              id="button-addon2" style="padding-top: .55rem;">
+              Enviar
+            </button>
+          </div>
+        </div>
+      </form>
+
+</main>
+<app-footer></app-footer>

@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AngularFireAuth } from "@angular/fire/compat/auth";
-import { user } from '@angular/fire/auth';
-import { ToastrService } from 'ngx-toastr';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { CodeErrorService } from 'src/app/services/code-error.service';
+import { ToastrService } from 'ngx-toastr';
 import { Usuario } from 'src/app/Entidades/usuario';
+import { CodeErrorService } from 'src/app/services/code-error.service';
 
 @Component({
   selector: 'app-registro',
@@ -17,9 +16,9 @@ export class RegistroComponent implements OnInit {
   Usuario:Usuario=new Usuario;
   nuevoRegistro:FormGroup;
   loading: boolean = false;
-  
+
   constructor(private fb:FormBuilder, private toastr: ToastrService, private router: Router,
-    private afAuth:AngularFireAuth, private codeError:CodeErrorService) { 
+    private afAuth:AngularFireAuth, private codeError:CodeErrorService) {
     this.nuevoRegistro = fb.group({
     email:["",[Validators.required, Validators.email]],
     pass:["",Validators.required],
@@ -30,7 +29,7 @@ export class RegistroComponent implements OnInit {
   }
 
   registrar(){
-    
+
     if(this.Usuario.pass != this.Usuario.pass2){
       this.toastr.error("Las contraseñas ingresadas deben ser iguales", "Error");
       return;
@@ -49,5 +48,5 @@ export class RegistroComponent implements OnInit {
     });
   }
 
-  
+
 }

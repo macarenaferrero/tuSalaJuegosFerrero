@@ -29,10 +29,11 @@ main {
     background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Mountains-1412683.svg/1280px-Mountains-1412683.svg.png) no-repeat center center;
     background-size: cover;
 }
-.form_class {
-    width: 500px;
+.juego_class {
+    width: 700px;
     padding: 40px;
     border-radius: 8px;
+    border-color: darkmagenta;
     background-color: white;
     font-family: 'system-ui';
     box-shadow: 5px 5px 10px rgb(0,0,0,0.3);
@@ -77,4 +78,31 @@ main {
     margin-top: 10px;
     box-shadow: 2px 2px 5px rgb(0,0,0,0.2);
     cursor: pointer;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.card {
+  width: 200px;
+  height: 230px;
+  margin-bottom: 10px;
+}
+
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.text-muted {
+  text-align: center;
+}
+
+.position{
+  position: absolute;
 }

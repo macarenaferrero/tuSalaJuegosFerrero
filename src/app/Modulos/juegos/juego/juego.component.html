@@ -5,7 +5,57 @@
   <app-navbar></app-navbar>
 </nav>
 <main>
-  <h1>Hola</h1>
-  <router-outlet></router-outlet>
+  <div class="card-deck container">
+    <a (click)="jugarAhorcado()">
+      <div class="card">
+        <img class="card-img-top" src="../../../../assets/ahorcado/Ahorcado7.png">
+        <div class="card-footer">
+          <small class="text-muted">Ahorcado</small>
+        </div>
+      </div>
+    </a>
+    <a (click)="jugarMayorMenor()">
+      <div class="card">
+        <img class="card-img-top" src="../../../../assets/mayor-menor/presentación.png">
+        <div class="card-footer">
+          <small class="text-muted">Mayor Menor</small>
+        </div>
+      </div>
+    </a>
+    <a>
+      <div class="card">
+        <img class="card-img-top" src="../../../../assets/ahorcado/Ahorcado7.png">
+        <div class="card-footer">
+          <small class="text-muted">Mi Juego</small>
+        </div>
+      </div>
+    </a>
+  </div>
+  <div class="position">
+  <form *ngIf="jugarAlAhorcado"  class="juego_class " method="post">
+    <div class="form_div">
+      <app-ahorcado ></app-ahorcado>
+    </div>
+    <div class="info_div">
+        <a (click)="dejarDeJugar()"  >¡Cerrar juego!</a>
+    </div>
+  </form>
+  <form *ngIf="jugarAlMayorMenor"  class="juego_class " method="post">
+    <div class="form_div">
+      <app-mayor-menor></app-mayor-menor>
+    </div>
+    <div class="info_div">
+        <a (click)="dejarDeJugar()"  >¡Cerrar juego!</a>
+    </div>
+  </form>
+</div>
+
+
+
+
+
 </main>
 <app-footer></app-footer>
+
+<router-outlet></router-outlet>
+

@@ -5,10 +5,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { AngularFireModule } from "@angular/fire/compat";
 
-import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
-import { provideAuth,getAuth } from '@angular/fire/auth';
-import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { provideAuth, getAuth } from '@angular/fire/auth';
+import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 import { JuegosModule } from './Modulos/juegos/juegos.module';
 import { SharedModule } from './Modulos/shared/shared.module';
@@ -21,9 +22,9 @@ import { IndexComponent } from './Vistas/index/index.component';
 import { ErrorComponent } from './Vistas/error/error.component';
 import { QuienSoyComponent } from './Vistas/quien-soy/quien-soy.component';
 import { RegistroComponent } from './auth/registro/registro.component';
-import {  AngularFireModule} from "@angular/fire/compat";
-import { NavbarComponent } from './Modulos/shared/navbar/navbar.component';
-
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { ChatRoutingModule } from './Modulos/chat/chat-routing.module';
 
 
 @NgModule({
@@ -47,7 +48,7 @@ import { NavbarComponent } from './Modulos/shared/navbar/navbar.component';
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     BrowserAnimationsModule, // required animations module
-    ToastrModule.forRoot(), JuegosRoutingModule, // ToastrModule added
+    ToastrModule.forRoot(), JuegosRoutingModule, ChatRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

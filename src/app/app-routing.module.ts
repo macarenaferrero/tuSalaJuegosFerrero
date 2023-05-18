@@ -6,13 +6,15 @@ import { ErrorComponent } from './Vistas/error/error.component';
 import { QuienSoyComponent } from './Vistas/quien-soy/quien-soy.component';
 import { RegistroComponent } from './auth/registro/registro.component';
 import { JuegosModule } from './Modulos/juegos/juegos.module';
+import { ChatModule } from './Modulos/chat/chat.module';
 
 const rutas: Routes = [
   {path:"",component:IndexComponent},
   {path:"login",component:LoginComponent},
   {path:"registro", component:RegistroComponent},
   {path:"quien-soy",component:QuienSoyComponent},
-  {path: "juegos", loadChildren:()=>import('./Modulos/juegos/juegos.module').then(m => JuegosModule)},  
+  {path: "juegos", loadChildren:()=>import('./Modulos/juegos/juegos.module').then(m => m.JuegosModule)},
+  {path: "chat", loadChildren:()=>import('./Modulos/chat/chat.module').then(m => m.ChatModule)},
   {path:"**",component:ErrorComponent}
 ];
 

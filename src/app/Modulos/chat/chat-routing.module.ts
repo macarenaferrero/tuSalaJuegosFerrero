@@ -1,15 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { JuegoComponent } from './juego/juego.component';
-import { AhorcadoComponent } from './ahorcado/ahorcado.component';
+import { ChatComponent } from './chat.component';
 
 const routes: Routes = [
-  {path: '', component:JuegoComponent,
-}
-
+  {path: '', component:ChatComponent},
 ];
-
 
 @NgModule({
   declarations: [
@@ -22,4 +18,4 @@ const routes: Routes = [
     RouterModule
   ]
 })
-export class JuegosRoutingModule { }
+export class ChatRoutingModule { }
