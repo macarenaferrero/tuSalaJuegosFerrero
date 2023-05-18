@@ -1,44 +1,3 @@
-<!-- <div class="card mb-4 box-shadow">
-  <div class="card-header">
-    <img id="imgEmp" src="../../../../assets/mayor-menor/presentación.png" *ngIf="!empezado">
-  </div>
-  <button type="button" class="btn btn-lg btn-block btn-primary" id="empezar" [hidden]="empezado"
-    (click)='empezar()'>Empezar</button>
-  <div class="col-12" *ngIf="resultado">
-    <h3 class="text-center">{{mensaje}}</h3>
-  </div>
-  <div class="col-12" *ngIf="resultado">
-    <h3 class="text-center">Puntos: {{puntosAux}}</h3>
-    <br>
-    <label>Mejores Puntajes</label>
-    <div *ngFor="let puntaje of listaOrdenada">
-      <div class="row">
-        <div class="col-4">
-          <h3>{{puntaje.usuario}}</h3>
-        </div>
-        <div class="col-4">
-          <h3>{{puntaje.puntos}}</h3>
-        </div>
-      </div>
-    </div>
-  </div>
-  <br>
-  <hr>
-  <div class="container">
-    <div class="card-body col-sm-6 align-self-center" *ngIf="empezado">
-      <br>
-      <div class="col-12 text-center">
-        <h3>Puntos:</h3>
-        <h3>{{puntos}}</h3>
-      </div>
-      <br>
-      <img id="carta" [src]="carta.src">
-      <button type="button" class="btn btn-lg btn-block alert-danger" (click)='cartaMayor()'>Mayor</button>
-      <button type="button" class="btn btn-lg btn-block alert-success" (click)='cartaMenor()'>Menor</button>
-    </div>
-  </div> -->
-
-
   <div class="cardbox-shadow">
     <div class="card-header" *ngIf="!empezado">
       <img id="imgEmp" src="../../../../assets/mayor-menor/presentación.png" width="60%" class="img-centered">
@@ -64,7 +23,6 @@
       </div>
     </div>
     <br>
-    <hr>
     <div class="container">
       <div class="card-body text-center" *ngIf="empezado">
         <br>
