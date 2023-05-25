@@ -80,17 +80,14 @@ export class MayorMenorComponent implements OnInit {
      this.proximaCarta();
 
      if(this.carta.numero <= this.cartaSiguiente.numero){
-       console.log(this.carta.numero + '<=' + this.cartaSiguiente.numero);
        this.puntos += 10;
      }
      else{
-       console.log('¡Perdiste!');
        this.mensaje = "¡Perdiste!";
        this.puntosAux = this.puntos;
        this.puntos = 0;
        this.empezado = false;
        this.resultado = true;
-       console.log(this.puntos);
        this.addPuntaje(this.usuario.email, this.puntosAux);
        this.cargarPuntajes();
      }
@@ -100,23 +97,18 @@ export class MayorMenorComponent implements OnInit {
    }
 
    cartaMenor(){
-     //this.empezar();
 
      this.proximaCarta();
 
      if(this.carta.numero >= this.cartaSiguiente.numero){
-       console.log(this.carta.numero + '>=' + this.cartaSiguiente.numero);
        this.puntos += 10;
      }
      else{
-       console.log('¡Perdiste!');
        this.mensaje = "¡Perdiste!";
        this.puntosAux = this.puntos;
        this.puntos = 0;
        this.empezado = false;
        this.resultado = true;
-
-       console.log(this.puntos);
 
        this.addPuntaje(this.usuario.email, this.puntosAux);
        this.cargarPuntajes();
@@ -131,7 +123,6 @@ export class MayorMenorComponent implements OnInit {
      this.puntajeService.puntajes.subscribe((puntaje:any) =>{
        this.listaPuntajes = puntaje;
        this.listaOrdenada = this.listaPuntajes.slice(0, 3);
-       console.log(this.listaPuntajes);
      });
    }
 

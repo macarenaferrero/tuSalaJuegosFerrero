@@ -48,12 +48,9 @@ export class PreguntadosComponent implements OnInit {
   async traerPersonaje(){
     this.apiHarryPotter.obtenerPersonajesByName().subscribe((personajes:any[]) =>{
       const randomIndex = Math.floor(Math.random() * personajes.length);
-      console.log("salió el " + randomIndex);
 
         this.img = personajes[randomIndex].image;
         this.personaje = personajes[randomIndex];
-        console.log(this.img);
-        console.log(this.personaje);
         this.cargarPersonajes();
         this.arrayPersonajes.push(personajes[randomIndex]);
 
@@ -105,7 +102,6 @@ export class PreguntadosComponent implements OnInit {
   }
 
   correcto(nombre:string){
-    console.log("nombre presionado " + nombre);
     if(nombre == this.personaje.name){
       this.rtaCorrecta = true;
       this.mensaje = "Correcto!";
@@ -120,7 +116,6 @@ export class PreguntadosComponent implements OnInit {
       }
       this.mensaje = "Perdiste!";
       this.puntos = 0;
-      this.puntosAux = 0;
       this.juegoTerminado = true;
       this.correcta = false;
     }
@@ -140,7 +135,6 @@ export class PreguntadosComponent implements OnInit {
 
   cargarPuntajes(){
     this.listaPuntajes = [];
-    console.log(this.listaPuntajes);
 
     this.puntajeService.puntajes.subscribe((puntaje:any) =>{
       this.listaPuntajes = puntaje;

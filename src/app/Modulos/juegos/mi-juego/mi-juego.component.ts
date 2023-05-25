@@ -91,7 +91,6 @@ export class MiJuegoComponent implements OnInit {
     this.suscripcion = this.puntajeService.puntajes.subscribe((puntaje:any) =>{
       this.listaPuntajes = puntaje;
       this.listaOrdenada = this.listaPuntajes.slice(0, 3);
-      console.log(this.listaPuntajes);
     });
   }
 
