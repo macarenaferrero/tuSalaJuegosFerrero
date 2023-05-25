@@ -10,40 +10,16 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
   providedIn: 'root'
 })
 export class PuntajeService {
-//   colPuntajeAhorcado: CollectionReference<DocumentData> = collection(this.firestore, 'puntajeAhorcado');
-//   puntajes!: Observable<Puntos[]>;
-//   query: any;
-
-//   constructor(private firestore: Firestore) { }
-
-//   cargarPuntajesMM(){
-//     // setTimeout(() => {
-//       this.query = query(this.colPuntajeAhorcado, orderBy('id', 'desc'), limit(1));
-// =      this.colPuntajeAhorcado = this.query;
-//       setTimeout(() => {
-//       this.getPuntaje(this.colPuntajeAhorcado);
-//     }, 1000);
-//    }
-
-//    getPuntajes(collection: CollectionReference<DocumentData>) {
-//     collection.get().then(snapshot => {
-//       const puntajes = snapshot.docs.map(doc => {
-//         const data = doc.data() as Puntos;
-//         const id = doc.id;
-//         return { id, ...data };
-//       });
-//       console.log(puntajes);
-//     }).catch(error => {
-//       console.error('Error al obtener los puntajes:', error);
-//     });
-//   }
-
-
 
 dbPathMayorMenor: string =  'puntajesMayorMenor';
 dbPathAhorcado: string =  'puntajesAhorcado';
+dbPathPreguntados: string =  'puntajesPreguntados';
+dbPathMiJuego: string =  'puntajesMiJuego';
+
 puntajesMayorMenor!: AngularFirestoreCollection<Puntos>;
 puntajesAhorcado!: AngularFirestoreCollection<Puntos>;
+puntajesPreguntados!: AngularFirestoreCollection<Puntos>;
+puntajesMiJuego!: AngularFirestoreCollection<Puntos>;
 puntajes!: Observable<Puntos[]>;
 
 constructor(public db: AngularFirestore, public router: Router, public afAuth: AngularFireAuth) {
@@ -63,6 +39,20 @@ constructor(public db: AngularFirestore, public router: Router, public afAuth: A
     this.getPuntajes(this.puntajesAhorcado);
   }, 1000);
  }
+
+ cargarPuntajesPreguntados(){
+  this.puntajesPreguntados = this.db.collection<Puntos>(this.dbPathPreguntados, ref => ref.orderBy('puntos','desc'));
+setTimeout(() => {
+  this.getPuntajes(this.puntajesPreguntados);
+}, 1000);
+}
+
+cargarPuntajesMiJuego(){
+  this.puntajesMiJuego = this.db.collection<Puntos>(this.dbPathMiJuego, ref => ref.orderBy('puntos','desc'));
+setTimeout(() => {
+  this.getPuntajes(this.puntajesMiJuego);
+}, 1000);
+}
 
 
  addPuntaje(usuario: string, puntaje: number, collection: AngularFirestoreCollection){

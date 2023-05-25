@@ -1,5 +1,5 @@
   <div class="cardbox-shadow">
-    <div class="card-header" *ngIf="!empezado">
+    <div *ngIf="!empezado">
       <img id="imgEmp" src="../../../../assets/mayor-menor/presentación.png" width="60%" class="img-centered">
     </div>
     <button  type="button" class="submit_class" id="empezar" [hidden]="empezado"
@@ -8,7 +8,7 @@
       <h4 class="mt-1 text-center">{{mensaje}}</h4>
     </div>
     <div class="col-12" *ngIf="resultado">
-      <h4 class="text-center">Puntos: {{puntosAux}}</h4>
+      <h6 class="text-center">Puntos: {{puntosAux}}</h6>
       <br>
       <h6>Mejores Puntajes</h6>
       <div *ngFor="let puntaje of listaOrdenada">

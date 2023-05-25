@@ -1,0 +1,81 @@
+<div *ngIf="!empezado">
+  <img id="imgEmp" src="../../../../assets/mi-juego/juegoPresentacion.jpg" width="60%" class="img-centered">
+</div>
+<button  type="button" class="submit_class" id="empezar" [hidden]="empezado"
+  (click)='empezarDeNuevo()'>EMPEZAR</button>
+<div class="container" *ngIf="empezado">
+  <div class="row col-12" style="margin: auto; width: 100%; height: 100%;">
+    <div class="col-6" >
+      <div class="card">
+        <div class="forcard">
+          <div>
+            <h1 class="text-center" [ngClass]="{'text-danger': colorIzquierda.colorReal === 'rojo',
+                    'text-warning': colorIzquierda.colorReal === 'amarillo',
+                    'text-success': colorIzquierda.colorReal === 'verde',
+                    'text-primary': colorIzquierda.colorReal === 'azul'}">
+                    <b>{{colorIzquierda.palabra}}</b>
+            </h1>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="text-center">
+        <h4>Palabra</h4>
+        <br>
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="card">
+        <div class="forcard">
+          <div>
+            <h1 class="text-center" [ngClass]="{'text-danger': colorDerecha.colorReal === 'rojo',
+                    'text-warning': colorDerecha.colorReal === 'amarillo',
+                    'text-success': colorDerecha.colorReal === 'verde',
+                    'text-primary': colorDerecha.colorReal === 'azul'}"><b>{{colorDerecha.palabra}}</b></h1>
+            <!-- <p class="text-center">{{cartaActual.tipoCarta}}</p> -->
+
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="text-center">
+        <h4>Color</h4>
+        <br>
+      </div>
+
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-12">
+      <h2 class="text-center">
+        ¿La palabra coincide con el color?
+      </h2>
+    </div>
+
+    <button type="button" class="submit_class" (click)='ElegirSI()'>Si</button>
+    <button type="button" class="submit_class" (click)='ElegirNO()'>No</button>
+
+
+    <div class="text-center pt-3">
+      <span>Puntaje acumulado: {{puntajeAcumulado}}</span>
+    </div>
+    <br>
+
+  </div>
+</div>
+<div class="col-12" *ngIf="resultado">
+  <h6 class="text-center pt-3">Puntos: {{puntajeAcumulado}}</h6>
+
+  <h6>Mejores Puntajes</h6>
+  <div *ngFor="let puntaje of listaOrdenada">
+    <div class="row">
+      <div class="col-6">
+        <label>{{puntaje.usuario}}</label>
+      </div>
+      <div class="col-6">
+        <label>{{puntaje.puntos}}</label>
+      </div>
+    </div>
+  </div>
+</div>

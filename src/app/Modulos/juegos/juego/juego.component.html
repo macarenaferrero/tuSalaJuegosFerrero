@@ -22,9 +22,17 @@
         </div>
       </div>
     </a>
-    <a>
+    <a (click)="jugarPreguntados()">
       <div class="card">
-        <img class="card-img-top" src="../../../../assets/mi-juego/ajedrez.jpg">
+        <img class="card-img-top" src="../../../../assets/Preguntados/hpPresentación.jpg">
+        <div class="card-footer">
+          <small class="text-muted">Preguntados - Harry Potter</small>
+        </div>
+      </div>
+    </a>
+    <a (click)="jugarMio()">
+      <div class="card">
+        <img class="card-img-top" src="../../../../assets/mi-juego/juegoPresentacion.jpg">
         <div class="card-footer">
           <small class="text-muted">Mi Juego</small>
         </div>
@@ -43,6 +51,22 @@
   <form *ngIf="jugarAlMayorMenor"  class="juego_class " method="post">
     <div class="form_div">
       <app-mayor-menor></app-mayor-menor>
+    </div>
+    <div class="info_div">
+        <a (click)="dejarDeJugar()"  >¡Cerrar juego!</a>
+    </div>
+  </form>
+  <form *ngIf="jugarAlPreguntados"  class="juego_class " method="post">
+    <div class="form_div">
+      <app-preguntados></app-preguntados>
+    </div>
+    <div class="info_div">
+        <a (click)="dejarDeJugar()"  >¡Cerrar juego!</a>
+    </div>
+  </form>
+  <form *ngIf="jugarAlMio"  class="juego_class " method="post">
+    <div class="form_div">
+      <app-mi-juego></app-mi-juego>
     </div>
     <div class="info_div">
         <a (click)="dejarDeJugar()"  >¡Cerrar juego!</a>

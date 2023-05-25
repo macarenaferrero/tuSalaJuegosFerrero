@@ -22,8 +22,6 @@ import { IndexComponent } from './Vistas/index/index.component';
 import { ErrorComponent } from './Vistas/error/error.component';
 import { QuienSoyComponent } from './Vistas/quien-soy/quien-soy.component';
 import { RegistroComponent } from './auth/registro/registro.component';
-import { AngularFireAuthModule } from '@angular/fire/compat/auth';
-import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { ChatRoutingModule } from './Modulos/chat/chat-routing.module';
 
 

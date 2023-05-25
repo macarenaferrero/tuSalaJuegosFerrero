@@ -1,0 +1,55 @@
+<div *ngIf="!empezar">
+  <img id="imgEmp" src="../../../../assets/Preguntados/hpPresentación.jpg" width="60%" class="img-centered">
+</div>
+<input type="button" class="submit_class" (click)="onEmpezar()" [hidden]="empezar" value="Empezar">
+<input type="button" class="submit_class" (click)="onEmpezar()" [hidden]="!juegoTerminado" value="Volver a Jugar">
+<div class="containaer" *ngIf="empezar">
+    <div class="row">
+        <div class="col-12  character-container" *ngIf="!juegoTerminado">
+            <img id="imgPsj" class="character-image" src="{{this.img}}">
+        </div>
+        <div class="col-12 text-center">
+            <h6 class="pt-2">Puntos: {{puntos}}</h6>
+          </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="col-12" *ngIf="!juegoTerminado">
+                        <h3 class="text-center">¿Qué personaje de Harry Potter es?</h3>
+                    </div>
+                    <div class="col-12" *ngIf="juegoTerminado">
+                        <div *ngIf="correcta">
+                            <h3 class="text-center alert-success">{{mensaje}}</h3>
+                        </div>
+                        <div *ngIf="!correcta">
+                            <h3 class="text-center alert-danger">{{mensaje}}</h3>
+                        </div>
+                    </div>
+                    <div *ngIf="ordenadas && !juegoTerminado">
+                      <div *ngFor="let psj of arrayPersonajes">
+                        <div class="col-12">
+                            <button (click)="correcto(psj.name)" class="form-control">{{psj.name}}</button>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <hr>
+    <div class="container" *ngIf="juegoTerminado">
+      <label>Mejores Puntajes</label>
+      <div *ngFor="let puntaje of listaOrdenada">
+        <div class="row">
+          <div class="col-6">
+            <h6>{{puntaje.usuario}}</h6>
+          </div>
+          <div class="col-6">
+            <h6>{{puntaje.puntos}}</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</div>

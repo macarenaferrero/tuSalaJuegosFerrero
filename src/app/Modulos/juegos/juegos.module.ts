@@ -10,6 +10,9 @@ import { RouterModule } from '@angular/router';
 import { AhorcadoComponent } from './ahorcado/ahorcado.component';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { MayorMenorComponent } from './mayor-menor/mayor-menor.component';
+import { PreguntadosComponent } from './preguntados/preguntados.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MiJuegoComponent } from './mi-juego/mi-juego.component';
 
 
 
@@ -17,7 +20,9 @@ import { MayorMenorComponent } from './mayor-menor/mayor-menor.component';
   declarations: [
     JuegoComponent,
     AhorcadoComponent,
-    MayorMenorComponent
+    MayorMenorComponent,
+    PreguntadosComponent,
+    MiJuegoComponent
   ],
   imports: [
     CommonModule,
@@ -28,7 +33,7 @@ import { MayorMenorComponent } from './mayor-menor/mayor-menor.component';
     ReactiveFormsModule,
     RouterModule,
     provideAuth(() => getAuth()),
-
+    HttpClientModule
   ],
   exports:[
     JuegoComponent

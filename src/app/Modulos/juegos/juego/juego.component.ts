@@ -11,6 +11,8 @@ export class JuegoComponent implements OnInit {
   usuario:any;
   jugarAlAhorcado: boolean = false;
   jugarAlMayorMenor: boolean = false;
+  jugarAlPreguntados: boolean = false;
+  jugarAlMio: boolean = false;
 
   constructor(private afAuth:AngularFireAuth, private router: Router) {
   }
@@ -23,21 +25,28 @@ export class JuegoComponent implements OnInit {
   this.jugarAlMayorMenor = true;
   }
 
+  jugarPreguntados(){
+    this.jugarAlPreguntados = true;
+    }
+
+    jugarMio(){
+      this.jugarAlMio = true;
+    }
+
   ngOnInit(): void {
     this.jugarAlAhorcado=false;
     this.jugarAlMayorMenor=false;
-
+    this.jugarAlPreguntados = false;
+    this.jugarAlMio = false;
   }
 
   dejarDeJugar(){
     this.jugarAlAhorcado=false;
     this.jugarAlMayorMenor=false;
+    this.jugarAlPreguntados = false;
+    this.jugarAlMio = false;
   }
 
-  cambiarNombre():void{
-    this.usuario.usuario="Jorge";
-    this.usuario.contrasenia="Peposo";
-  }
   Aceptar():void{
     console.log(this.usuario.usuario);
     console.log(this.usuario.contrasenia);
