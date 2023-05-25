@@ -20,10 +20,33 @@ export class MayorMenorComponent implements OnInit {
      {"src": "../../../../assets/mayor-menor/A_pica.png", "numero": 1},
      {"src": "../../../../assets/mayor-menor/A_trebol.png", "numero": 1},
      {"src": "../../../../assets/mayor-menor/A_diamante.png", "numero": 1},
+     {"src": "../../../../assets/mayor-menor/A_corazón.png", "numero": 1},
      {"src": "../../../../assets/mayor-menor/2_pica.png", "numero": 2},
      {"src": "../../../../assets/mayor-menor/3_corazón.png", "numero": 3},
      {"src": "../../../../assets/mayor-menor/4_corazón.png", "numero": 4},
+     {"src": "../../../../assets/mayor-menor/4_diamante.png", "numero": 4},
+     {"src": "../../../../assets/mayor-menor/4_pica.png", "numero": 4},
+     {"src": "../../../../assets/mayor-menor/4_trebol.png", "numero": 4},
      {"src": "../../../../assets/mayor-menor/5_corazón.png", "numero": 5},
+     {"src": "../../../../assets/mayor-menor/5_diamante.png", "numero": 5},
+     {"src": "../../../../assets/mayor-menor/5_pica.png", "numero": 5},
+     {"src": "../../../../assets/mayor-menor/6_pica.png", "numero": 6},
+     {"src": "../../../../assets/mayor-menor/7_diamante.png", "numero": 7},
+     {"src": "../../../../assets/mayor-menor/8_trebol.png", "numero": 8},
+     {"src": "../../../../assets/mayor-menor/8_corazón.png", "numero": 8},
+     {"src": "../../../../assets/mayor-menor/8_diamante.png", "numero": 8},
+     {"src": "../../../../assets/mayor-menor/8_pica.png", "numero": 8},
+     {"src": "../../../../assets/mayor-menor/9_pica.png", "numero": 9},
+     {"src": "../../../../assets/mayor-menor/10_corazón.png", "numero": 10},
+     {"src": "../../../../assets/mayor-menor/J_diamante.png", "numero": 11},
+     {"src": "../../../../assets/mayor-menor/J_pica.png", "numero": 11},
+     {"src": "../../../../assets/mayor-menor/J_trebol.png", "numero": 11},
+     {"src": "../../../../assets/mayor-menor/J_corazón.png", "numero": 11},
+     {"src": "../../../../assets/mayor-menor/Q_diamante.png", "numero": 12},
+     {"src": "../../../../assets/mayor-menor/K_trebol.png", "numero": 13},
+     {"src": "../../../../assets/mayor-menor/K_pica.png", "numero": 13},
+     {"src": "../../../../assets/mayor-menor/K_diamante.png", "numero": 13},
+     {"src": "../../../../assets/mayor-menor/K_corazón.png", "numero": 13},
    ];
    mensaje!: string;
    puntos!: number;
@@ -63,7 +86,7 @@ export class MayorMenorComponent implements OnInit {
    proximaCarta(){
      if(this.cartasAux.length > 0){
        var i = Math.floor(Math.random()* this.cartasAux.length);
-       this.cartaSiguiente.src = this.cartasAux[i].src;
+         this.cartaSiguiente.src = this.cartasAux[i].src;
        this.cartaSiguiente.numero = this.cartasAux[i].numero;
        delete this.cartasAux[i];
      }
