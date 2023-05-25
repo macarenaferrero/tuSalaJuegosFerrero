@@ -55,16 +55,12 @@ export class AhorcadoComponent implements OnInit {
     this.cambiarImagen();
     var i = Math.floor(Math.random()* this.palabrasAux.length);
     this.palabra = this.palabrasAux[i];
-    console.log(this.palabrasAux);
-    console.log(this.palabra);
     if(this.palabra){
       this.palabraEnGuiones = this.palabra.replace(/./g, "_ ");
     }
 
-    console.log(this.palabra + ' - ' + this.palabraEnGuiones);
     this.palabrasAux.splice(i, 1);
 
-    console.log(this.palabrasAux);
 
     this.errores = 0;
     this.empezado = true;
@@ -90,18 +86,14 @@ export class AhorcadoComponent implements OnInit {
       const element = this.palabra[index];
 
       if(letra.toLowerCase() == element){
-        console.log('letra correcta');
         this.palabraEnGuiones = this.replaceAt(index*2, element.toLocaleUpperCase());
-        console.log(this.palabraEnGuiones);
         coincidencias++;
       }
     }
 
     if(coincidencias == 0){
       this.errores++;
-      console.log(coincidencias);
 
-      console.log(this.errores);
       this.cambiarImagen();
     }
 
@@ -141,7 +133,6 @@ export class AhorcadoComponent implements OnInit {
         document.querySelector("#horca")?.setAttribute("src", "../../../../assets/ahorcado/Ahorcado1.png");
         break
       case 1:
-        console.log(this.errores);
         document.querySelector("#horca")?.setAttribute("src", "../../../../assets/ahorcado/Ahorcado2.png");
         break;
       case 2:
@@ -175,8 +166,6 @@ export class AhorcadoComponent implements OnInit {
     this.puntajeService.puntajes.subscribe((puntaje:any) =>{
       this.listaPuntajes = puntaje;
       this.listaOrdenada = this.listaPuntajes.slice(0, 3);
-      console.log(puntaje);
-      console.log(this.resultado);
 
     });
   }
