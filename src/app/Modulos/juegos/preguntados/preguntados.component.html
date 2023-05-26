@@ -1,4 +1,4 @@
-<div *ngIf="!empezar">
+<div *ngIf="!empezar || juegoTerminado">
   <img id="imgEmp" src="../../../../assets/Preguntados/hpPresentación.jpg" width="60%" class="img-centered">
 </div>
 <input type="button" class="submit_class" (click)="onEmpezar()" [hidden]="empezar" value="Empezar">
@@ -16,14 +16,6 @@
                 <div class="col-12">
                     <div class="col-12" *ngIf="!juegoTerminado">
                         <h3 class="text-center">¿Qué personaje de Harry Potter es?</h3>
-                    </div>
-                    <div class="col-12" *ngIf="juegoTerminado">
-                        <div *ngIf="correcta">
-                            <h3 class="text-center alert-success">{{mensaje}}</h3>
-                        </div>
-                        <div *ngIf="!correcta">
-                            <h3 class="text-center alert-danger">{{mensaje}}</h3>
-                        </div>
                     </div>
                     <div *ngIf="ordenadas && !juegoTerminado">
                       <div *ngFor="let psj of arrayPersonajes">

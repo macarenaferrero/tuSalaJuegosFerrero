@@ -52,6 +52,7 @@ export class AhorcadoComponent implements OnInit {
   }
 
   empezar(){
+    this.comenzar = "../../../../assets/ahorcado/Ahorcado1.png";
     this.cambiarImagen();
     var i = Math.floor(Math.random()* this.palabrasAux.length);
     this.palabra = this.palabrasAux[i];

@@ -1,7 +1,12 @@
 
 <div class="container-fluid" id="general">
   <div class="row">
-    <div class="col-6 col-sm-6">
+    <div class="col-6 col-sm-6" *ngIf="!empezado">
+      <div id="ahorcado" class=" p-2">
+        <img id="horca"  src="../../../../assets/ahorcado/Ahorcado7.png">
+      </div>
+    </div>
+    <div class="col-6 col-sm-6" *ngIf="empezado">
       <div id="ahorcado" class=" p-2">
         <img id="horca" [src]="comenzar">
       </div>
